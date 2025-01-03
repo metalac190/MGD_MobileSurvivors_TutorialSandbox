@@ -47,9 +47,18 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector2 spawnPoint;
         // infinite loop, but break out while waiting
-        while (true)
+        while (_playerCharacter != null)
         {
             yield return new WaitForSeconds(_spawnRate);
+            // stop spawning and exit early if our player has
+            // become invalid
+            if (_playerCharacter == null)
+            {
+                StopSpawning();
+                // exit IEnumerator
+                yield break;
+            }
+                
             spawnPoint = GetValidWorldSpawnPoint();
             // if we have a valid spawn point, spawn!
             if(spawnPoint != Vector2.zero)
@@ -58,7 +67,6 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
-
     private Enemy ChooseRandomEnemy()
     {
         int randomEnemyIndex;
@@ -114,5 +122,16 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("Could not spawn");
         // we've done our loops and testpoint is still default
         return testPoint = Vector2.zero;
+    }
+    public void DestroyAllEnemies()
+    {
+        // put all enemies in the scene into an array
+        Enemy[] enemies = FindObjectsByType<Enemy>
+            (FindObjectsSortMode.None);
+        // destroy every enemy gameObject in the array
+        foreach(Enemy enemy in enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
     }
 }

@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int _currentHealth = 100;
+
+    public UnityEvent OnKilled;
     public void TakeDamage(int amount)
     {
         _currentHealth -= amount;
@@ -15,6 +18,8 @@ public class Health : MonoBehaviour
     }
     public void Kill()
     {
+        OnKilled?.Invoke();
+
         Destroy(gameObject);
     }
 }
