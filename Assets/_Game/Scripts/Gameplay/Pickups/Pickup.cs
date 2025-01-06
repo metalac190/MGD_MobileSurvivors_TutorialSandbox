@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public abstract class Pickup : MonoBehaviour
 {
-    [SerializeField] private float _expValue = 20;
+    protected abstract void Collect(PlayerCharacter playerCharacter);
+
     private void OnTriggerEnter2D(Collider2D otherCollision)
     {
         // test if the gameObject has a PlayerCharacter component
@@ -14,10 +15,5 @@ public class Pickup : MonoBehaviour
             Collect(playerCharacter);
             Destroy(this.gameObject);
         }
-    }
-
-    public void Collect(PlayerCharacter playerCharacter)
-    {
-        playerCharacter.IncreaseEXP(_expValue);
     }
 }

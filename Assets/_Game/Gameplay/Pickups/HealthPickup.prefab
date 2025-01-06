@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1751399121385302096}
   - component: {fileID: 1118088132415624986}
-  - component: {fileID: 7048399346360065310}
+  - component: {fileID: 7397179443437291885}
   m_Layer: 11
-  m_Name: Pickup
+  m_Name: HealthPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.25
---- !u!114 &7048399346360065310
+--- !u!114 &7397179443437291885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,10 +79,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 592139253804426461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcaf2650a261f14c8a82307e28f7623, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c81cbabd95a3814a8cfa3cb6e7298e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _expValue: 20
 --- !u!1 &2607749790007712581
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +159,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.83548117, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.12296213, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
