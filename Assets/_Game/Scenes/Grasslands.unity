@@ -58419,13 +58419,14 @@ GameObject:
   m_Component:
   - component: {fileID: 879991346}
   - component: {fileID: 879991347}
+  - component: {fileID: 879991348}
   m_Layer: 5
   m_Name: GameHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &879991346
 Transform:
   m_ObjectHideFlags: 0
@@ -58460,6 +58461,19 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
+--- !u!114 &879991348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879991345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdec6d95dcddf94aad764d003032b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameController: {fileID: 1439512396}
 --- !u!1 &918653572
 GameObject:
   m_ObjectHideFlags: 0
