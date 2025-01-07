@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e24897f18ab5a4c9ded97c6129c4e5, type: 3}
+  m_Name: WeaponData_MagicWand
+  m_EditorClassIdentifier: 
+  _name: MagicWand
+  _damage: 5
+  _moveSpeed: 5
+  _lifetime: 2
+  _cooldown: 1
+  _projectile: {fileID: 8121080829608724875, guid: 915e37c4913ac3240bed9758695e9825, type: 3}
+  _onlyFireIfNearbyTargets: 1
+  _detectionRadius: 10
+  _targetFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
