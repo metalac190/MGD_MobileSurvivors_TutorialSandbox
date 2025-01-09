@@ -58474,6 +58474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameController: {fileID: 1439512396}
+  _playerCharacter: {fileID: 1624187183}
 --- !u!1 &918653572
 GameObject:
   m_ObjectHideFlags: 0
