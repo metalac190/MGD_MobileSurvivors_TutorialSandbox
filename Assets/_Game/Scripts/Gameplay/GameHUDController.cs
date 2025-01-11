@@ -12,6 +12,8 @@ public class GameHUDController : MonoBehaviour
 
     private VisualElement _playerHUDVisualTree;
     private VisualElement _expBarFill;
+
+    private Label _elapsedTimeLabel;
     private void Awake()
     {
         _document = GetComponent<UIDocument>();
@@ -22,6 +24,9 @@ public class GameHUDController : MonoBehaviour
             .Q("PlayerHUDVisualTree");
         // only search the playerHUDvisual tree, to show we can
         _expBarFill = _playerHUDVisualTree.Q("ProgressBarFill");
+
+        _elapsedTimeLabel = _document.rootVisualElement
+            .Q("ElapsedTimeLabel") as Label;
         // assign button callbacks
         _loseRetryButton = _loseMenuVisualTree
             .Q("RetryButton") as Button;
@@ -48,6 +53,22 @@ public class GameHUDController : MonoBehaviour
     {
         DisableAllDisplays();
         //SetEXPBarPercent(30,100);
+    }
+    private void Update()
+    {
+        UpdateElapsedTimeLabel();
+    }
+    private void UpdateElapsedTimeLabel()
+    {
+        // save local variable for calculations
+        float elapsedTime = _gameController.ElapsedTime;
+        // calculate mins and secs separately
+        int minutes = Mathf.FloorToInt(elapsedTime / 60) % 60;
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        // format string
+        string textElapsedTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+        // update UI!
+        _elapsedTimeLabel.text = textElapsedTime;
     }
     private void DisableAllDisplays()
     {
